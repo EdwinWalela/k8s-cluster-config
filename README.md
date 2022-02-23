@@ -1,8 +1,15 @@
 # Kubernetes Demo Cluster Configuration
 
-Configuration files for deployments, services and configMaps for a demo K8s cluster.
+Configuration files for deployments, services and configMaps for a demo K8s cluster running on minikube.
+
+## Requirements
+
+- kubectl
+- minikube
 
 ## Setup
+
+- clone repo
 
 - `minikube start`
 
