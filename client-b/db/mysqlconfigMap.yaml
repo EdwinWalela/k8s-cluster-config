@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mysqlconfigmap
+  namespace: client-b
+data:
+  MYSQL_ROOT_PASSWORD: root
+  MYSQL_DATABASE: blog

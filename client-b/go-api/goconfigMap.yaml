@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: goconfigmap
+  namespace: client-b
+data:
+  PORT: "3000"
