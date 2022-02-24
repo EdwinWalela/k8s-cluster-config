@@ -1,6 +1,8 @@
 # Kubernetes Demo Cluster Configuration
 
-Configuration files for deployments, services and configMaps for a [demo K8s cluster](https://github.com/EdwinWalela/k8s-cluster) running on minikube.
+Configuration files for SAAS architecture 
+
+Consists of deployments, services and configMaps for a [demo K8s cluster](https://github.com/EdwinWalela/k8s-cluster) running on minikube.
 
 ## Requirements
 

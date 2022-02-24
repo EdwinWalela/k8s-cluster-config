@@ -2,6 +2,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: blogconfigmap
+  namespace: client-a
 data:
   APP_DEBUG: "false"
   APP_ENV: production

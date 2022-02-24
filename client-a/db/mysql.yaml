@@ -1,43 +1,42 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: blog
+  name: mysql
+  namespace: client-a
   labels:
-    app: blog
+    app: mysql
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
-      app: blog
+      app: mysql
   template:
     metadata:
       labels:
-        app: blog
+        app: mysql
     spec:
       containers:
-        - name: blog
+        - name: mysql
           envFrom:
             - configMapRef:
-                name: blogconfigmap
-          image: edwinwalela/k8-blog
+                name: mysqlconfigmap
+          image: mysql
           imagePullPolicy: Always
           resources:
             limits:
               memory: 512Mi
               cpu: "1"
           ports:
-            - containerPort: 8000
+            - containerPort: 3306
 ---
 
 apiVersion: v1
 kind: Service
 metadata:
-  name: blog
+  name: mysql-service
 spec:
-  type: LoadBalancer
   selector:
-    app: blog
+    app: mysql
   ports:
-  - port: 8000 # Service port
-    targetPort: 8000 # pod port
-    nodePort: 30000
+  - port: 3306 # Service port
+    targetPort: 3306 # pod port
