@@ -34,6 +34,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: mysql-service
+  namespace: client-b
 spec:
   selector:
     app: mysql

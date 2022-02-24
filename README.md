@@ -15,11 +15,30 @@ Consists of deployments, services and configMaps for a [demo K8s cluster](https:
 
 - `minikube start`
 
+### Create namespaces
+
+- `cd namespace`
+
 - `kubectl apply -f .`
+
+
+### Create client instances
+
+- `cd client-a`
+
+- `kubectl apply -f . -R`
+
+- `cd client-b`
+
+- `kubectl apply -f . -R`
+
 
 ## Deployments
 
-Run `kubectl get deployment`
+Run `kubectl get deployment -n client-a`
+
+
+Run `kubectl get deployment -n client-b`
 
 Created deployments
 
@@ -28,12 +47,20 @@ Created deployments
 - PhpMyAdmin
 - MySQL (DB)
 
-## Accessible services
+## Access applications
 
-List avaiable services using  `kubectl get services `
+List avaiable services 
 
-- `minikube service blog` Asssigns external IP to blog
-- `minikube service goapi` Assigns external IP to API
-- `minikube service phpmyadmin` Assigns external IP to phpmyadmin
+`kubectl get services -n client-a`
+
+`kubectl get services -n client-b`
+
+### Assign external IP addresses to services
+
+`minikube service blog -n client-a` 
+
+`minikube service goapi -n client-a` 
+
+`minikube service phpmyadmin -n client-a` 
 
 
